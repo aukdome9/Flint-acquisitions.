@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Crimson+Pro:ital,wght@1,300&family=DM+Mono:wght@400&display=swap');
+
+/* ─── DESIGN TOKENS ─────────────────────────────────── */
+:root {
+  /* Brand palette */
+  --flint-black:    #0A0A0A;
+  --charcoal:       #161614;
+  --flint-stone:    #3A3632;
+  --ember-amber:    #C48E34;
+  --texas-rust:     #A85828;
+  --parchment:      #F2EEE6;
+  --ash:            #949088;
+  --white:          #FFFFFF;
+
+  /* Typography */
+  --font-display:   'Big Shoulders Display', sans-serif;
+  --font-body:      'Crimson Pro', serif;
+  --font-mono:      'DM Mono', monospace;
+
+  /* Spacing scale */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+  --space-xl:  6rem;
+  --space-2xl: 8rem;
+
+  /* Transitions */
+  --transition-fast: 200ms ease;
+  --transition-med:  300ms ease;
+}
+
+/* ─── RESET & BASE ───────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--flint-black);
+  color: var(--white);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+/* ─── TYPOGRAPHY UTILITIES ───────────────────────────── */
+.font-display { font-family: var(--font-display); }
+.font-body    { font-family: var(--font-body); }
+.font-mono    { font-family: var(--font-mono); }
+
+.text-amber   { color: var(--ember-amber); }
+.text-white   { color: var(--white); }
+.text-ash     { color: var(--ash); }
+.text-stone   { color: var(--flint-stone); }
+.text-parchment { color: var(--parchment); }
+
+/* ─── SECTION BACKGROUNDS ────────────────────────────── */
+.bg-dark      { background-color: var(--flint-black); }
+.bg-charcoal  { background-color: var(--charcoal); }
+.bg-parchment { background-color: var(--parchment); }
+
+/* ─── CONTAINER ──────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* ─── CTA BUTTON ─────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--ember-amber);
+  color: var(--flint-black);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.btn-primary:hover {
+  background-color: #d49d3e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(196, 142, 52, 0.35);
+}
+
+/* ─── SECTION LABEL ──────────────────────────────────── */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ember-amber);
+  margin-bottom: 1rem;
+}
+
+/* ─── SECTION HEADER ─────────────────────────────────── */
+.section-header {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.0;
+  letter-spacing: 0.02em;
+}
+.section-header.dark  { color: var(--flint-black); }
+.section-header.light { color: var(--white); }
+
+/* ─── AMBER RULE ─────────────────────────────────────── */
+.amber-rule {
+  display: block;
+  width: 48px;
+  height: 3px;
+  background-color: var(--ember-amber);
+  margin: 1rem 0;
+}
+
+/* ─── AMBER SCROLL CHEVRON ───────────────────────────── */
+@keyframes chevronPulse {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50%       { transform: translateY(8px); opacity: 0.5; }
+}
+.scroll-chevron {
+  animation: chevronPulse 1.6s ease-in-out infinite;
+  color: var(--ember-amber);
+  font-size: 1.5rem;
+}
+
+/* ─── CARD HOVER ─────────────────────────────────────── */
+.card-hover {
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+}
+
+/* ─── AMBER STARS ────────────────────────────────────── */
+.stars {
+  color: var(--ember-amber);
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+/* ─── SKIP LINK ──────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--ember-amber);
+  color: var(--flint-black);
+  padding: 8px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  z-index: 9999;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ─── SCROLLBAR ──────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--flint-black); }
+::-webkit-scrollbar-thumb { background: var(--flint-stone); border-radius: 3px; }
+
+/* ─── RESPONSIVE HELPERS ─────────────────────────────── */
+@media (max-width: 768px) {
+  .hide-mobile { display: none !important; }
+}
+@media (min-width: 769px) {
+  .hide-desktop { display: none !important; }
+}
+
+/* ─── FOOTER LINK STYLES ─────────────────────────────── */
+.footer-nav-link {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--flint-stone);
+  transition: color var(--transition-fast);
+  display: block;
+}
+.footer-nav-link:hover { color: var(--ember-amber); }
+
+.footer-inline-link {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--ash);
+  letter-spacing: 0.08em;
+  transition: color var(--transition-fast);
+}
+.footer-inline-link:hover { color: var(--ember-amber); }
+
+/* ─── NAVBAR LINK HOVER ──────────────────────────────── */
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ash);
+  transition: color var(--transition-fast);
+}
+.nav-link:hover { color: var(--ember-amber); }

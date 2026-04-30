@@ -1,0 +1,50 @@
+const BASE_URL = 'https://flinthousebuyers.com';
+
+const routes = [
+  { url: '/', priority: 1.0 },
+  { url: '/how-it-works/', priority: 0.9 },
+  { url: '/who-we-help/', priority: 0.9 },
+  { url: '/about/', priority: 0.85 },
+  { url: '/faq/', priority: 0.85 },
+  { url: '/get-my-offer/', priority: 0.95 },
+  { url: '/compramos-tu-casa/', priority: 0.9 },
+  { url: '/sell-house-foreclosure-austin/', priority: 0.85 },
+  { url: '/sell-house-divorce-austin/', priority: 0.85 },
+  { url: '/sell-inherited-house-austin/', priority: 0.85 },
+  { url: '/sell-house-relocating-austin/', priority: 0.85 },
+  { url: '/sell-house-bad-tenants-austin/', priority: 0.85 },
+  { url: '/sell-house-repairs-austin/', priority: 0.85 },
+  { url: '/sell-vacant-house-austin/', priority: 0.8 },
+  { url: '/sell-house-tax-lien-austin/', priority: 0.8 },
+  { url: '/sell-house-probate-austin/', priority: 0.8 },
+  { url: '/sell-house-downsizing-austin/', priority: 0.8 },
+  { url: '/sell-my-house-east-austin/', priority: 0.8 },
+  { url: '/sell-my-house-south-austin/', priority: 0.8 },
+  { url: '/sell-my-house-north-austin/', priority: 0.8 },
+  { url: '/sell-my-house-rundberg-austin/', priority: 0.8 },
+  { url: '/sell-my-house-pflugerville/', priority: 0.8 },
+  { url: '/sell-my-house-round-rock/', priority: 0.8 },
+  { url: '/sell-my-house-manor-tx/', priority: 0.75 },
+  { url: '/sell-my-house-cedar-park/', priority: 0.75 },
+  { url: '/sell-my-house-leander/', priority: 0.75 },
+  { url: '/sell-my-house-georgetown-tx/', priority: 0.75 },
+  { url: '/sell-my-house-kyle-tx/', priority: 0.75 },
+  { url: '/sell-my-house-buda-tx/', priority: 0.75 },
+  { url: '/sell-my-house-del-valle/', priority: 0.7 },
+  { url: '/sell-my-house-bastrop/', priority: 0.7 },
+  { url: '/sell-my-house-hutto-tx/', priority: 0.75 },
+  { url: '/sell-my-house-taylor-tx/', priority: 0.75 },
+  { url: '/sell-my-house-lakeway/', priority: 0.7 },
+  { url: '/sell-my-house-bee-cave/', priority: 0.7 },
+  { url: '/sell-my-house-dripping-springs/', priority: 0.7 },
+  { url: '/sell-my-house-san-marcos/', priority: 0.75 },
+];
+
+export default function sitemap() {
+  return routes.map((r) => ({
+    url: `${BASE_URL}${r.url}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: r.priority,
+  }));
+}
